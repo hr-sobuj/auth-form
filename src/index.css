@@ -1,3 +1,45 @@
+.custom-input {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.placeholder-label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  color: #999;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: white;
+  padding: 0 0.25rem;
+  transform-origin: left;
+  transition-duration: 0.2s;
+  transition-timing-function: ease;
+}
+
+.placeholder-label.focused {
+  top: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.input-field:focus + .placeholder-label {
+  top: 0.5rem;
+  font-size: 0.75rem;
+  color: #666;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
