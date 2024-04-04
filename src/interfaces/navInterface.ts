@@ -1,8 +1,15 @@
 export interface NavbarContent {
-    logo: string;
-    flag: string;
+    logo: {
+        src: string;
+        alt: string;
+    };
+    flag: {
+        src: string;
+        alt: string;
+    };
+    flagTxt: string;
     signInBtn: {
-        name: string;
+        label: string;
         url: string;
     };
 }

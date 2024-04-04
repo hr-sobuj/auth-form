@@ -38,6 +38,15 @@
       ],
       "@interfaces/*": [
         "./src/interfaces/*"
+      ],
+      "@layout/*": [
+        "./src/layout/*"
+      ],
+      "@route/*": [
+        "./src/route/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
       ]
     }
   },

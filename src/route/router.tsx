@@ -1,6 +1,6 @@
+import DefaultLayout from "@layout/DefaultLayout";
+import SignIn from '@pages/SingIn';
 import { createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "./../layout/DefaultLayout";
-import SignIn from './../pages/SingIn';
 
 const routeMap = [
     {

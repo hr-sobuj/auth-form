@@ -1,7 +1,11 @@
-import { navbarContent } from '@/assets/data/navbar.js';
+import { navbarContent } from '@assets/data/navbar';
 import Navbar from '@components/navbar/Navbar';
+import React, { ReactNode } from "react";
+interface DefaultLayoutProps {
+    children: ReactNode;
+}
 
-export default function DefaultLayout({ children }) {
+const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
     return (
         <>
             <Navbar data={navbarContent} />
@@ -11,3 +15,5 @@ export default function DefaultLayout({ children }) {
         </>
     )
 }
+
+export default DefaultLayout;
