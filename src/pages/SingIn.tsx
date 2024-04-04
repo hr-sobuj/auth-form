@@ -38,7 +38,7 @@ export default function SignIn() {
         setShowPassword(!showPassword);
     };
 
-    const handleSignIn = (e) => {
+    const handleSignIn = (e: any) => {
         e.preventDefault();
         if (!email) {
             setEmailError('Please enter your email.');
@@ -56,7 +56,7 @@ export default function SignIn() {
             setIsLoading(true);
             setTimeout(() => {
                 setIsLoading(false);
-                navigate(`sign-in-info?email=${encodeURIComponent(email)}`);
+                navigate('sign-in-info', { state: { email } });
             }, 3000);
         }
     };
