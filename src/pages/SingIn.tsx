@@ -1,7 +1,7 @@
 import Spinner from '@components/ui/spinner/Spinner';
 import { useState } from 'react';
 import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
     const [email, setEmail] = useState('');
@@ -134,7 +134,7 @@ export default function SignIn() {
                     </div>
                 </form>
                 <div className="text-sm text-center">
-                    <p className="text-gray-600">Don't have an account? <a href="/sign-up" className="font-medium text-primary hover:text-deep transition-all duration-200">Create an Account</a></p>
+                    <p className="text-gray-600">Don't have an account? <Link to="/account-type" className="font-medium text-primary hover:text-deep transition-all duration-200">Create an Account</Link></p>
                 </div>
             </div>
         </section>
