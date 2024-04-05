@@ -1,7 +1,11 @@
 import FileUpload from '@components/ui/file/FileUpload';
 import { ErrorMessage, Field } from 'formik';
+import React from 'react';
+interface PersonalInfoProps {
+    type: string;
+}
 
-const PersonalInfo = ({ type }) => {
+const PersonalInfo: React.FC<PersonalInfoProps> = ({ type }) => {
     return (
         <div className="mx-auto">
             <div className="mb-4">
