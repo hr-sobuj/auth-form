@@ -3,6 +3,7 @@ import PersonalInfo from "@container/individua/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -17,7 +18,6 @@ const initialValues = {
     agreeTerms: false,
     businessName: '',
     website: '',
-    tradeLicense: null,
     district: '',
     city: '',
     postcode: '',
@@ -41,7 +41,6 @@ const validationSchema = Yup.object({
     agreeTerms: Yup.boolean().oneOf([true], 'You must agree to the terms and conditions'),
     businessName: Yup.string().required("Business Name is required"),
     website: Yup.string().url("Invalid URL format"),
-    tradeLicense: Yup.mixed().required("Trade License is required"),
     district: Yup.string().required("District/State is required"),
     city: Yup.string().required("City/Town is required"),
     postcode: Yup.string().required("Post Code/Zip Code is required"),
@@ -49,6 +48,7 @@ const validationSchema = Yup.object({
 });
 
 const Individual = () => {
+    const navigate = useNavigate();
     const [activeStep, setActiveStep] = useState(0);
     const steps = ["1", "2"];
 
@@ -91,7 +91,7 @@ const Individual = () => {
                             if (!isLastStep) {
                                 setActiveStep((prevStep) => prevStep + 1);
                             } else {
-                                console.log("Form submitted with values:", values);
+                                navigate('/show', { state: values });
                             }
                             setSubmitting(false);
                         }}
