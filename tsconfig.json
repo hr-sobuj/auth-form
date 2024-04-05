@@ -58,6 +58,11 @@
   },
   "include": [
     "src",
+    "src/components/form",
+    "tmp/extra/Individual.tsx",
+    "tmp/extra/Business.tsx",
+    "tmp/extra/individual",
+    "tmp/extra/business",
   ],
   "exclude": [],
   "references": [

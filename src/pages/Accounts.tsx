@@ -1,9 +1,9 @@
-import ContactInfo from "@container/business/ContactInfo";
+import ContactInfo from "@container/shared/ContactInfo";
 import PersonalInfo from "@container/shared/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -42,15 +42,15 @@ const validationSchema = Yup.object({
     agreeTerms: Yup.boolean().oneOf([true], 'You must agree to the terms and conditions'),
     businessName: Yup.string().required("Business Name is required"),
     website: Yup.string().url("Invalid URL format"),
-    tradeLicense: Yup.mixed().required("Trade License is required"),
     district: Yup.string().required("District/State is required"),
     city: Yup.string().required("City/Town is required"),
     postcode: Yup.string().required("Post Code/Zip Code is required"),
     address: Yup.string().required("Address is required"),
 });
 
-const Business = () => {
+const Accounts = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [activeStep, setActiveStep] = useState(0);
     const steps = ["1", "2"];
 
@@ -65,13 +65,16 @@ const Business = () => {
     const isLastStep = activeStep === steps.length - 1;
     const isFirstStep = activeStep === 0;
 
+    const type = location.search.split('=')[1];
+
+
     return (
         <section>
             <div className="container mb-20">
                 <div className="w-full flex flex-col space-y-10 p-8 shadow-2xl border mb-6">
                     <div className="flex justify-center items-center flex-col space-y-2 text-center">
                         <h2 className="text-3xl md:text-5xl font-bold text-center"> Let's Get Started with</h2>
-                        <p className=" text-base font-bold">Business</p>
+                        <p className=" text-base font-bold">{type === 'personal' ? 'Personal' : 'Business'}</p>
                         <p>Please provide the following information</p>
                     </div>
                     <div className="flex justify-center items-center">
@@ -101,13 +104,13 @@ const Business = () => {
                         {(formikProps) => (
                             <Form>
                                 {activeStep === 0 && (
-                                    <PersonalInfo />
+                                    <PersonalInfo type={type} />
                                 )}
                                 {activeStep === 1 && (
                                     <ContactInfo />
                                 )}
 
-                                <div className="my-16 flex justify-center items-center space-x-6">
+                                <div className="my-8 flex justify-center items-center space-x-6">
                                     {/* @ts-ignore */}
                                     <Button type="button" onClick={handlePrev} disabled={isFirstStep} className="bg-white border-primary border px-4 py-2 basis-1/2 text-primary uppercase rounded-md">
                                         Back
@@ -131,4 +134,4 @@ const Business = () => {
     );
 };
 
-export default Business;
+export default Accounts;

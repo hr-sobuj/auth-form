@@ -1,6 +1,7 @@
+import FileUpload from '@components/ui/file/FileUpload';
 import { ErrorMessage, Field } from 'formik';
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ type }) => {
     return (
         <div className="mx-auto">
             <div className="mb-4">
@@ -28,10 +29,33 @@ const PersonalInfo = () => {
                 </div>
             </div>
 
+            <div className={`mb-4 ${type === 'business' ? 'block' : 'hidden'}`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label htmlFor="tradeLicense" className="block mb-1">Trade License (File Input)</label>
+                        <Field
+                            name="tradeLicense"
+                            component={FileUpload}
+                            className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                        />
+                        <ErrorMessage name="tradeLicense" component="div" className="text-red-500 mt-1" />
+                    </div>
+                    <div>
+                        <label htmlFor="district" className="block mb-1">District/State</label>
+                        <Field
+                            type="text"
+                            name="district"
+                            placeholder="District/State"
+                            className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:border-blue-500"
+                        />
+                        <ErrorMessage name="district" component="div" className="text-red-500 mt-1" />
+                    </div>
+                </div>
+            </div>
 
             <div className="mb-4">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
+                <div className={`grid  gap-4 ${type === 'business' ? 'grid-cols-2' : 'grid-cols-3'}`}>
+                    <div className={` ${type === 'business' ? 'hidden' : 'block'}`}>
                         <label htmlFor="district" className="block mb-1">District/State</label>
                         <Field
                             type="text"

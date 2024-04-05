@@ -29,7 +29,7 @@ data.accountType = {
             description: 'For personal use.',
             btn: {
                 label: 'Sign up',
-                url: '/personal-sign-up'
+                url: `/accounts?type=personal`
             }
         },
         {
@@ -38,7 +38,7 @@ data.accountType = {
             description: 'For Business use.',
             btn: {
                 label: 'Sign up',
-                url: '/business-sign-up'
+                url: `/accounts?type=business`
             }
         }
     ]

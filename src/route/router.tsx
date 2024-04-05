@@ -1,7 +1,6 @@
 import DefaultLayout from "@layout/DefaultLayout";
+import Accounts from "@pages/Accounts";
 import AccountType from "@pages/AccountType";
-import Business from "@pages/Business";
-import Individual from "@pages/Individual";
 import ShowInfo from "@pages/ShowInfo";
 import ShowSigningInfo from "@pages/ShowSigningInfo";
 import SignIn from '@pages/SingIn';
@@ -29,17 +28,13 @@ const routeMap = [
         element: <DefaultLayout><ShowSigningInfo /></DefaultLayout>,
     },
     {
-        path: "/personal-sign-up",
-        element: <DefaultLayout><Individual /></DefaultLayout>,
-    },
-    {
-        path: "/business-sign-up",
-        element: <DefaultLayout><Business /></DefaultLayout>,
-    },
-    {
         path: "/show",
         element: <DefaultLayout><ShowInfo /></DefaultLayout>,
-    }
+    },
+    {
+        path: "/accounts",
+        element: <DefaultLayout><Accounts /></DefaultLayout>,
+    },
 
 ]
 
