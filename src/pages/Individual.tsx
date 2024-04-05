@@ -3,7 +3,6 @@ import PersonalInfo from "@container/individua/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -50,7 +49,6 @@ const validationSchema = Yup.object({
 });
 
 const Individual = () => {
-    const navigate = useNavigate();
     const [activeStep, setActiveStep] = useState(0);
     const steps = ["1", "2"];
 
@@ -69,8 +67,8 @@ const Individual = () => {
         <section>
             <div className="container mb-20">
                 <div className="w-full flex flex-col space-y-10 p-8 shadow-2xl border">
-                    <div className="flex justify-center items-center flex-col space-y-2">
-                        <h2 className=" text-5xl font-body"> Let's Get Started with</h2>
+                    <div className="flex justify-center items-center flex-col space-y-2 text-center">
+                        <h2 className="text-3xl md:text-5xl font-body"> Let's Get Started with</h2>
                         <p className=" text-base font-bold">Individual</p>
                         <p>Please provide the following information</p>
                     </div>
@@ -93,8 +91,7 @@ const Individual = () => {
                             if (!isLastStep) {
                                 setActiveStep((prevStep) => prevStep + 1);
                             } else {
-                                // console.log("Form submitted with values:", values);
-                                navigate('/show', { state: values });
+                                console.log("Form submitted with values:", values);
                             }
                             setSubmitting(false);
                         }}
@@ -108,7 +105,7 @@ const Individual = () => {
                                     <ContactInfo />
                                 )}
 
-                                <div className="mt-16 flex justify-center items-center space-x-6">
+                                <div className="my-16 flex justify-center items-center space-x-6">
                                     {/* @ts-ignore */}
                                     <Button type="button" onClick={handlePrev} disabled={isFirstStep} className="bg-white border-primary border px-4 py-2 basis-1/2 text-primary uppercase rounded-md">
                                         Back
