@@ -38,8 +38,10 @@ export function MultiStepForm() {
 
     return (
         <div className="w-full py-4 px-8">
+            {/* @ts-ignore */}
             <Stepper activeStep={activeStep}>
                 {steps.map((label, index) => (
+                    /* @ts-ignore */
                     <Step key={index} onClick={() => setActiveStep(index)}>
                         {label}
                     </Step>
@@ -50,13 +52,9 @@ export function MultiStepForm() {
                 initialValues={initialValues}
                 validationSchema={validationSchema}
                 onSubmit={(values, { setSubmitting }) => {
-                    // You can handle form submission here
-                    // Call an API or perform any action with the form values
-                    // After successful submission, you can proceed to the next step
                     if (!isLastStep) {
                         setActiveStep((prevStep) => prevStep + 1);
                     } else {
-                        // Handle final submission
                         console.log("Form submitted with values:", values);
                     }
                     setSubmitting(false);
@@ -91,9 +89,11 @@ export function MultiStepForm() {
                         )}
 
                         <div className="mt-16 flex justify-between">
+                            {/* @ts-ignore */}
                             <Button type="button" onClick={handlePrev} disabled={isFirstStep}>
                                 Prev
                             </Button>
+                            {/* @ts-ignore */}
                             <Button
                                 type="submit"
                                 onClick={handleNext}

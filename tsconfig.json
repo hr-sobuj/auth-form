@@ -58,9 +58,8 @@
   },
   "include": [
     "src",
-    "tmp/SingIn copy.tsx",
-    "tmp/container"
   ],
+  "exclude": [],
   "references": [
     {
       "path": "./tsconfig.node.json"

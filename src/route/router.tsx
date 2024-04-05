@@ -2,6 +2,7 @@ import DefaultLayout from "@layout/DefaultLayout";
 import AccountType from "@pages/AccountType";
 import Business from "@pages/Business";
 import Individual from "@pages/Individual";
+import ShowInfo from "@pages/ShowInfo";
 import ShowSigningInfo from "@pages/ShowSigningInfo";
 import SignIn from '@pages/SingIn';
 import { createBrowserRouter } from "react-router-dom";
@@ -34,6 +35,10 @@ const routeMap = [
     {
         path: "/business-sign-up",
         element: <DefaultLayout><Business /></DefaultLayout>,
+    },
+    {
+        path: "/show",
+        element: <DefaultLayout><ShowInfo /></DefaultLayout>,
     }
 
 ]
