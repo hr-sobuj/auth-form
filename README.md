@@ -1,30 +1,83 @@
-# React + TypeScript + Vite
+# Authentication Form Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a multi-step authentication form designed with error validation, custom input fields, and a responsive design. It utilizes JavaScript, TypeScript, and React.js to create a seamless user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Multi-step form for intuitive user interaction
+- Error validation to ensure accurate data entry
+- Custom input fields for a unique design
+- Responsive design for compatibility across devices
 
-## Expanding the ESLint configuration
+## Technology Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- JavaScript
+- TypeScript
+- React.js
 
-- Configure the top-level `parserOptions` property like this:
+## JSON Object Design
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The JSON object design of this project allows for easy manipulation of content. You can modify the object content to suit your specific requirements.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hr-sobuj/auth-form.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd auth-form
+   ```
+
+3. Install dependencies using npm:
+
+   ```bash
+   npm install
+   ```
+
+   Or using Yarn:
+
+   ```bash
+   yarn install
+   ```
+
+   Or using pnpm:
+
+   ```bash
+   pnpm install
+   ```
+
+4. If you haven't installed `bun` globally, you can do so using npm:
+
+   ```bash
+   npm install -g bun
+   ```
+
+5. To run the project with `bun`, execute:
+
+   ```bash
+   bun run dev
+   ```
+
+   Alternatively, you can use `bun` to install and start the project:
+
+   ```bash
+   bun install
+   bun start
+   ```
+
+## Repository Link
+
+[Authentication Form Repo](https://github.com/hr-sobuj/auth-form)
+
+## Live Demo
+
+[Authentication Form Live Demo](https://auth-form-gold.vercel.app/)
+
+## Screenshot
+
+![Authentication Form Screenshot](screenshot.png)

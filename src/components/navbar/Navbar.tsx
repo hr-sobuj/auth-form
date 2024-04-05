@@ -41,7 +41,6 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                         </div>
                     </div>
                 </div>
-                {/* Dropdown menu */}
                 {showMenu && (
                     <div className="sm:hidden bg-gray-200 py-2 transition-all duration-200">
                         <div className="container flex justify-center items-center space-x-4">
