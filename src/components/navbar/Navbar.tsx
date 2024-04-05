@@ -1,4 +1,4 @@
-import type { NavbarContent } from '@interfaces/navInterface';
+import { NavbarContent } from '@interfaces/navInterface';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -13,12 +13,10 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
         setShowMenu(!showMenu);
     }
 
-    function onSignIn() { }
-
     return (
         <header>
             <nav className="bg-secondary">
-                <div className="container flex justify-between items-center p-4">
+                <div className="container flex justify-between items-center py-4">
                     <div className="flex items-center">
                         <h1>
                             <Link to="/">
@@ -39,21 +37,24 @@ const Navbar: React.FC<NavbarProps> = ({ data }) => {
                             <span>{data.flagTxt}</span>
                         </div>
                         <div>
-                            <Link to='/sign-in' onClick={() => onSignIn()} className="bg-green-700 text-white px-4 py-2 rounded cursor-pointer">{data.signInBtn.label}</Link>
+                            <Link to='/sign-in' className="bg-green-700 text-white px-4 py-2 rounded cursor-pointer">{data.signInBtn.label}</Link>
                         </div>
                     </div>
-                    <div className={showMenu ? "block sm:hidden" : "hidden"}>
-                        <div className="overflow-hidden lg:hidden flex flex-col space-y-4 bg-slate-100 transition-all duration-200">
-                            <div className="text-white inline-flex space-x-2">
+                </div>
+                {/* Dropdown menu */}
+                {showMenu && (
+                    <div className="sm:hidden bg-gray-200 py-2 transition-all duration-200">
+                        <div className="container flex justify-center items-center space-x-4">
+                            <div className="text-black inline-flex space-x-2">
                                 <img src={data.flag.src} alt={data.flag.alt} className="w-6 h-6 mr-2" />
                                 <span>{data.flagTxt}</span>
                             </div>
                             <div>
-                                <Link to='/sign-in' onClick={() => onSignIn()} className="bg-green-700 text-white px-4 py-2 rounded cursor-pointer">{data.signInBtn.label}</Link>
+                                <Link to='/sign-in' className="bg-green-700 text-white px-4 py-2 rounded cursor-pointer">{data.signInBtn.label}</Link>
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
             </nav>
         </header>
     );
