@@ -1,6 +1,7 @@
 import Spinner from '@components/ui/spinner/Spinner';
 import { useState } from 'react';
-import { RiEyeFill, RiEyeOffFill } from 'react-icons/ri';
+import { GoEye, GoEyeClosed } from "react-icons/go";
+
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
@@ -56,7 +57,7 @@ export default function SignIn() {
             setIsLoading(true);
             setTimeout(() => {
                 setIsLoading(false);
-                navigate('sign-in-info', { state: { email } });
+                navigate('/sign-in-info', { state: { email } });
             }, 3000);
         }
     };
@@ -109,9 +110,9 @@ export default function SignIn() {
                                 />
                                 <span className="absolute top-[1.2rem] right-2">
                                     {showPassword ? (
-                                        <RiEyeOffFill onClick={togglePasswordVisibility} className={`cursor-pointer ${passwordError ? 'text-red-500' : ''}`} />
+                                        <GoEye onClick={togglePasswordVisibility} className={`cursor-pointer ${passwordError ? 'text-red-500' : ''}`} />
                                     ) : (
-                                        <RiEyeFill onClick={togglePasswordVisibility} className="cursor-pointer" />
+                                        <GoEyeClosed onClick={togglePasswordVisibility} className="cursor-pointer" />
                                     )}
                                 </span>
                             </div>
@@ -129,7 +130,7 @@ export default function SignIn() {
                             type="submit"
                             className={`w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none  transition-all duration-200 ${isLoading ? 'disabled bg-gray-400' : 'bg-primary hover:bg-deep focus:ring-2 focus:ring-offset-2 focus:ring-primary'}`}
                         >
-                            {isLoading ? <Spinner /> : 'Sign in'}
+                            {isLoading ? <Spinner txt="Sign in" /> : 'Sign in'}
                         </button>
                     </div>
                 </form>
