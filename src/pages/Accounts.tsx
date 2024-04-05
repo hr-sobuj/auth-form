@@ -3,7 +3,7 @@ import PersonalInfo from "@components/ui/shared/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
 const initialValues = {
@@ -124,6 +124,9 @@ const Accounts = () => {
                                     >
                                         {isLastStep ? "Submit" : "Next"}
                                     </Button>
+                                </div>
+                                <div className="text-sm text-center my-3">
+                                    <p className="text-gray-600">Already have an account? <Link to="/" className="font-medium text-primary hover:text-deep transition-all duration-200">Sign in</Link></p>
                                 </div>
                             </Form>
                         )}
