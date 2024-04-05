@@ -5,8 +5,8 @@ const ShowInfo = () => {
     const { state } = location;
 
     return (
-        <div className="container mx-auto mt-10">
-            <h2 className="text-3xl font-bold mb-4">Submitted Information</h2>
+        <div className="container mx-auto mt-10 mb-40">
+            <h2 className="text-3xl font-bold mb-4 text-center">Submitted Information</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white shadow-md p-6 rounded-lg">
                     <h3 className="text-xl font-bold mb-4">Personal Information</h3>

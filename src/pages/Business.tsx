@@ -1,5 +1,5 @@
 import ContactInfo from "@container/business/ContactInfo";
-import PersonalInfo from "@container/business/PersonalInfo";
+import PersonalInfo from "@container/shared/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
@@ -93,7 +93,6 @@ const Business = () => {
                             if (!isLastStep) {
                                 setActiveStep((prevStep) => prevStep + 1);
                             } else {
-                                // console.log("Form submitted with values:", values);
                                 navigate('/show', { state: values });
                             }
                             setSubmitting(false);

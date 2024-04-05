@@ -1,5 +1,5 @@
-import ContactInfo from "@container/individua/ContactInfo";
-import PersonalInfo from "@container/individua/PersonalInfo";
+import ContactInfo from "@container/individual/ContactInfo";
+import PersonalInfo from "@container/shared/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
@@ -105,7 +105,7 @@ const Individual = () => {
                                     <ContactInfo />
                                 )}
 
-                                <div className="my-16 flex justify-center items-center space-x-6">
+                                <div className="my-6 flex justify-center items-center space-x-6">
                                     {/* @ts-ignore */}
                                     <Button type="button" onClick={handlePrev} disabled={isFirstStep} className="bg-white border-primary border px-4 py-2 basis-1/2 text-primary uppercase rounded-md">
                                         Back
