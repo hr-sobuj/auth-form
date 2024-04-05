@@ -5,7 +5,7 @@ export default function AccountType() {
     const { accountType: data } = allData;
 
     return (
-        <section className="min-h-screen flex flex-col space-y-6 items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <section className="min-h-[80vh] flex flex-col space-y-6 items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="text-center">
                 <h2 className="mt-6 text-3xl font-extrabold text-gray-900">{data.title}</h2>
             </div>

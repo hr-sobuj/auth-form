@@ -47,12 +47,19 @@
       ],
       "@assets/*": [
         "./src/assets/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
       ]
     }
   },
   "include": [
     "src",
-    "tmp/SingIn copy.tsx"
+    "tmp/SingIn copy.tsx",
+    "tmp/container"
   ],
   "references": [
     {

@@ -5,7 +5,7 @@ const Footers = () => {
     return (
         <footer id='footer' className='bg-secondary text-white fixed bottom-0 left-0 right-0'>
             <div className="container py-6">
-                <div className='grid grid-cols-3 gap-4 justify-evenly items-center'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4 justify-between items-center'>
                     <div className="text-center">
                         <p className="text-sm">&copy; {footerData.copyRight}</p>
                     </div>
