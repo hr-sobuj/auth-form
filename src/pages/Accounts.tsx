@@ -1,5 +1,5 @@
-import ContactInfo from "@container/shared/ContactInfo";
-import PersonalInfo from "@container/shared/PersonalInfo";
+import ContactInfo from "@components/ui/shared/ContactInfo";
+import PersonalInfo from "@components/ui/shared/PersonalInfo";
 import { Button, Step, Stepper } from "@material-tailwind/react";
 import { Form, Formik } from "formik";
 import { useState } from "react";
